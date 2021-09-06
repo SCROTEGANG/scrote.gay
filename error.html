@@ -11,6 +11,10 @@
                 justify-content: center;
             }
 
+            #header {
+                margin-bottom: -1.25rem;
+            }
+
             #intro {
                 display: flex;
                 flex-direction: column;
@@ -21,7 +25,7 @@
     <body>
         <div id="intro">
             <img src="/static/pinhead.jpg">
-            <h1>{{placeholder "http.error.status_code"}}</h1>
+            <h1 id="header">{{placeholder "http.error.status_code"}}</h1>
             <h2>{{placeholder "http.error.status_text"}}</h2>
         </div>
     </body>
