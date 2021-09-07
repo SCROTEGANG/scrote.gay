@@ -2,17 +2,27 @@
 <html>
     <head>
         <title>Shit!!!!!!!</title>
+
+        <style>
+            #shit {
+                list-style: none;
+            }
+
+            #shit>a {
+                font-size: 1.25rem;
+            }
+        </style>
     </head>
     <body>
         <article id="shit">
+            {{range $file := listFiles "/shit/"}}
             <ul>
-                {{range $file := listFiles "/shit/"}}
-                    {{$pretty := trimSuffix $file ".md"}}
-                    <li>
-                        <a href="{{$pretty}}">{{$pretty}}</a>
-                    </li>
-                {{end}}
+                {{$pretty := stripSuffix ".md" $file }}
+                <li>
+                    <a href="{{$pretty}}">{{$pretty}}</a>
+                </li>
             </ul>
+            {{end}}
         </article>
     </body>
 </html>
