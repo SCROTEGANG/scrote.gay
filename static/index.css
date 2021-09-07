@@ -1,0 +1,16 @@
+body {
+    height: calc(100vh - 16px);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: -1.5rem;
+}

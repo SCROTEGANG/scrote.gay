@@ -2,41 +2,24 @@
 
 <html>
     <head>
-        <meta charset="utf-8">
+        {{include "/include/head.html" "hell"}}
+
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat&display=swap');
-
-            body {
-                height: calc(100vh - 16px);
-                display: grid;
-                align-items: center;
-                justify-content: center;
-            }
-
-            #intro {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-            }
-
             #header {
                 color: #674EA7;
                 font-size: 81px;
-                font-family: 'Anton';
-                margin-bottom: -1.5rem;
             }
 
             #subtext {
                 font-size: 25px;
                 font-weight: 400;
-                font-family: 'Caveat';
             }
         </style>
     </head>
     <body>
-        <div id="intro">
-            <h1 id="header">SCROTEGANG</h1>
-            <h2 id="subtext">“When this beat drops I’m going to fucking kill myself” ~ Dylan
+        <div class="content">
+            <h1 class="header" id="header">SCROTEGANG</h1>
+            <h2 id="subtext">“When this beat drops I’m going to fucking kill myself”
             </h2>
         </div>
     </body>

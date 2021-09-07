@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Shit!!!!!!!</title>
+        {{include "/include/head.html" "Shit!!!!!!!"}}
 
         <style>
             ul {
@@ -13,25 +13,24 @@
                 text-transform: capitalize;
             }
 
-            body {
-                height: calc(100vh - 16px);
-                display: grid;
-                align-items: center;
-                justify-content: center;
+            #header {
+                font-size: 81px;
             }
         </style>
     </head>
     <body>
-        <article id="shit">
-            {{range $file := listFiles "/shit/"}}
-            <h1>SCROTEDOCS</h1>
-            <ul>
-                {{$pretty := trimSuffix ".md" $file }}
-                <li>
-                    <a href="{{$pretty}}">{{$pretty}}</a>
-                </li>
-            </ul>
-            {{end}}
-        </article>
+        <div class="content">
+            <h1 id="header">SCROTEDOCS</h1>
+            <div id="block">
+                <ul>
+                    {{range $file := listFiles "/shit/"}}
+                        {{$pretty := trimSuffix ".md" $file}}
+                        <li>
+                            <a href="/shit/{{$pretty}}">{{$pretty}}</a>
+                        </li>
+                    {{end}}
+                </ul>
+            </div>
+        </div>
     </body>
 </html>

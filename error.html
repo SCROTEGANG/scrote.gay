@@ -2,30 +2,12 @@
 
 <html>
     <head>
-        <meta charset="utf-8">
-        <style>
-            body {
-                height: calc(100vh - 16px);
-                display: grid;
-                align-items: center;
-                justify-content: center;
-            }
-
-            #header {
-                margin-bottom: -1.25rem;
-            }
-
-            #intro {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-            }
-        </style>
+        {{include "/include/head.html" {{placeholder "http.error.status_code"}}}}
     </head>
     <body>
-        <div id="intro">
+        <div class="content">
             <img src="/static/pinhead.jpg">
-            <h1 id="header">{{placeholder "http.error.status_code"}}</h1>
+            <h1 class="header">{{placeholder "http.error.status_code"}}</h1>
             <h2>{{placeholder "http.error.status_text"}}</h2>
         </div>
     </body>
