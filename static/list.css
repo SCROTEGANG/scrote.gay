@@ -1,0 +1,9 @@
+ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+a {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
