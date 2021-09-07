@@ -25,8 +25,13 @@
     <body>
         <div id="intro">
             <img src="/static/pinhead.jpg">
-            <h1 id="header">{{placeholder "http.error.status_code"}}</h1>
-            <h2>{{placeholder "http.error.status_text"}}</h2>
+            {{if eq (placeholder http.request.uri.query.proxy) "true"}}
+                <h1 id="header">{{placeholder "http.reverse_proxy.status_code"}}</h1>
+                <h2>{{placeholder "http.reverse_proxy.status_text"}}</h2>
+            {{else}}
+                <h1 id="header">{{placeholder "http.error.status_code"}}</h1>
+                <h2>{{placeholder "http.error.status_text"}}</h2>
+            {{end}}
         </div>
     </body>
 </html>

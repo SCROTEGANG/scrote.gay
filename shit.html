@@ -4,18 +4,27 @@
         <title>Shit!!!!!!!</title>
 
         <style>
-            #shit {
+            ul {
                 list-style: none;
             }
 
-            #shit>a {
+            a {
                 font-size: 1.25rem;
+                text-transform: capitalize;
+            }
+
+            body {
+                height: calc(100vh - 16px);
+                display: grid;
+                align-items: center;
+                justify-content: center;
             }
         </style>
     </head>
     <body>
         <article id="shit">
             {{range $file := listFiles "/shit/"}}
+            <h1>SCROTEDOCS</h1>
             <ul>
                 {{$pretty := trimSuffix ".md" $file }}
                 <li>
