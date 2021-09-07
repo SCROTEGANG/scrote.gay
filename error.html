@@ -2,7 +2,11 @@
 
 <html>
     <head>
-        {{include "/include/head.html" (placeholder "http.error.status_code")}}
+        {{if eq (placeholder "http.reverse_proxy.status_code") "" }}
+            {{include "/include/head.html" (placeholder "http.error.status_code")}}
+        {{else}}
+            {{include "/include/head.html" (placeholder "http.reverse_proxy.status_code")}}
+        {{end}}
 
         <style>
             #pinhead-smaller {
