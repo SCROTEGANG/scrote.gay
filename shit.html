@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shit!!!!!!!</title>
+    </head>
+    <body>
+        <article id="shit">
+            <ul>
+                {{range $file := listFiles "/shit/"}}
+                    {{$pretty := trimSuffix $file ".md"}}
+                    <li>
+                        <a href="{{$pretty}}">{{$pretty}}</a>
+                    </li>
+                {{end}}
+            </ul>
+        </article>
+    </body>
+</html>
