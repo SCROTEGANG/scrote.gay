@@ -17,7 +17,7 @@
         <article id="shit">
             {{range $file := listFiles "/shit/"}}
             <ul>
-                {{$pretty := stripSuffix ".md" $file }}
+                {{$pretty := trimSuffix ".md" $file }}
                 <li>
                     <a href="{{$pretty}}">{{$pretty}}</a>
                 </li>
