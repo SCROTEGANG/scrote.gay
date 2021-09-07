@@ -1,0 +1,17 @@
+{{$pathParts := splitList "/" .OriginalReq.URL.Path}}
+{{$markdownFilename := default "index" (slice $pathParts 2 | join "/")}}
+{{$markdownFilePath := printf "/shit/%s.md" $markdownFilename}}
+{{$markdownFile := (include $markdownFilePath | splitFrontMatter)}}
+{{$title := default $markdownFilename $markdownFile.Meta.title}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{$title}} &#9959; SCROTEGANG</title>
+    </head>
+    <body>
+        <article>
+            {{markdown $markdownFile.Body}}
+        </article>
+    </body>
+</html>
