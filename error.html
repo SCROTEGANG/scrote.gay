@@ -3,11 +3,24 @@
 <html>
     <head>
         {{include "/include/head.html" (placeholder "http.error.status_code")}}
+
+        <style>
+            #pinhead-smaller {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                #pinhead {
+                    display: none;
+                }
+            }
+        </style>
     </head>
     <body>
         <div class="content">
             <a href="/">
-                <img src="/static/pinhead.jpg">
+                <img id="pinhead" src="/static/pinhead.jpg">
+                <img id="pinhead-smaller" src="/static/pinhead-mobile.jpg">
             </a>
             <h1 class="header">{{placeholder "http.error.status_code"}}</h1>
             <h2>{{placeholder "http.error.status_text"}}</h2>
