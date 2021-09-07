@@ -12,5 +12,13 @@ body {
 }
 
 .header {
+    color: #674EA7;
+    font-size: 81px;
     margin-bottom: -1.5rem;
+}
+
+@media (min-width: 768px) {
+    .header {
+        font-size: 45px;
+    }
 }
