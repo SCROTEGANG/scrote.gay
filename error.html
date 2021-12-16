@@ -2,11 +2,7 @@
 
 <html>
     <head>
-        {{if eq (placeholder "http.reverse_proxy.status_code") "" }}
-            {{include "/include/head.html" (placeholder "http.error.status_code")}}
-        {{else}}
-            {{include "/include/head.html" (placeholder "http.reverse_proxy.status_code")}}
-        {{end}}
+        {{include "/include/head.html" (placeholder "http.error.status_code")}}
 
         <style>
             #pinhead-smaller {
@@ -30,13 +26,8 @@
                 <img id="pinhead" src="/static/pinhead.jpg">
                 <img id="pinhead-smaller" src="/static/pinhead-mobile.jpg">
             </a>
-            {{if eq (placeholder "http.reverse_proxy.status_code") ""}}
-                <h1 class="header">{{placeholder "http.error.status_code"}}</h1>
-                <h2>{{placeholder "http.error.status_text"}}</h2>
-            {{else}}
-                <h1 class="header">{{placeholder "http.reverse_proxy.status_code"}}</h1>
-                <h2>{{placeholder "http.reverse_proxy.status_text"}}</h2>
-            {{end}}
+            <h1 class="header">{{placeholder "http.error.status_code"}}</h1>
+            <h2>{{placeholder "http.error.status_text"}}</h2>
         </div>
     </body>
 </html>
