@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        {{ include "include/head.html" "SCROTEGANG" }}
-        
-        <link rel="stylesheet" href="/static/style/index.css">
-    </head>
-    <body>
+
+<head>
+    {{ include "include/head.html" "The Hsu Hao Historical Society" }}
+
+    <link rel="stylesheet" href="/static/style/index.css">
+
+    <style>
+        img {
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    {{ if eq (len (listFiles "/posts/hsuhao")) 0 }}
         <section class="hero is-fullheight">
             <div class="hero-head"></div>
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="title is-size-4-mobile is-size-1-tablet is-family-secondary has-text-blurple">SCROTEGANG</h1>
-                    <h2 class="subtitle is-size-5-mobile is-size-3-tablet">When this beat drops I'm going to fucking kill myself</h2>
-
-                    <ul class="mt-5">
-                        <li>
-                            <a class="is-family-monospace has-text-blurple" href="/hsuhao">Hsu Hao Historical Society</a>
-                        </li>
-                    </ul>
+                    <h1 class="title is-size-4-mobile is-size-1-tablet">A <span
+                            class="is-family-secondary has-text-blurple">SCROTEGANG</span> PSA</h1>
+                    <h2 class="subtitle is-size-5-mobile is-size-3-tablet">All of Hsu Hao's posts suck. Fuck ya life.</h2>
                 </div>
             </div>
             <div class="hero-foot"></div>
         </section>
-    </body>
+    {{ else }}
+        <section class="section">
+            <div class="container mt-5">
+                <div class="columns is-centered">
+                    <div class="column is-half has-text-centered">
+                        <img src="/static/image/hsuhao.png" width="172" height="152" alt="Tortured soul Bald Hsu Hao">
+                        <h1 class="is-size-2">Bald Hsu Hao</h1>
+                        <p class="is-family-monospace">1969 &mdash; <span id="year">???</span></p>
+                        <p class="is-size-4">Born in Phoenix, Arizona to a family, Bald Hsu Hao lived a long, agonizing
+                            life. Succeeded by his
+                            mother, Max, his father, the entirey of SCROTEGANG, and his brother, Meat (Uncircumcised), his
+                            legacy shall live on. To commemorate
+                            him, some of Bald Hsu Hao's greatest moments.</p>
+                    </div>
+                </div>
+                <div class="columns is-centered is-multiline">
+                    {{ range $file := (listFiles "/posts/hsuhao") }}
+                        {{ if (or (eq (ext $file) ".jpg") (eq (ext $file) ".png")) }}
+                            <div class="column is-full has-text-centered">
+                                <img src="/posts/hsuhao/{{ $file }}">
+                                <h2 class="is-size-3 is-size-5-mobile">{{ trunc 10 $file | replace "-" "/" }}</h2>
+                            </div>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+        <script>
+            const year = document.getElementById("year");
+            const now = new Date();
+            year.innerText = now.getFullYear();
+        </script>
+    {{ end }}
+</body>
+
 </html>
