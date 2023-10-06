@@ -1,20 +1,10 @@
 @charset "utf-8";
 
-@font-face {
-    font-family: 'Alumni Sans';
-    font-weight: 400;
-    src: url(/static/font/AlumniSans-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Noto+Sans+Mono&display=swap');
 
 @font-face {
     font-family: 'Antique Olive Std Nord';
     src: url(/static/font/ANTIQUEOLIVESTD-NORD_0.OTF);
-}
-
-@font-face {
-    font-family: 'Noto Sans Mono';
-    font-weight: 400;
-    src: url(/static/font/NotoSansMono-Regular.ttf);
 }
 
 @import "../node_modules/bulma/sass/utilities/functions.sass";
