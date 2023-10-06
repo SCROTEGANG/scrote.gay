@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Alumni Sans';
+    font-weight: 400;
+    src: url(/static/font/AlumniSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Antique Olive Std Nord';
+    src: url(/static/font/ANTIQUEOLIVESTD-NORD_0.OTF);
+}
+
+@font-face {
+    font-family: 'Noto Sans Mono';
+    font-weight: 400;
+    src: url(/static/font/NotoSansMono-Regular.ttf);
+}
+
+@import "../node_modules/bulma/sass/utilities/functions.sass";
+
+$blurple: #6464ff;
+$blurple-invert: findColorInvert($blurple);
+$blurple-light: findLightColor($blurple);
+$blurple-dark: findDarkColor($blurple);
+
+$custom-colors: ("blurple": ($blurple, $blurple-invert, $blurple-light, $blurple-dark));
+
+$family-sans-serif: 'Alumni Sans', sans-serif;
+$family-monospace: 'Noto Sans Mono', monospace;
+$family-secondary: 'Antique Olive Std Nord', sans-serif;
+
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+
+@import "../node_modules/bulma/sass/elements/container.sass";
+
+@import "../node_modules/bulma/sass/grid/_all.sass";
+
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";

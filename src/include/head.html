@@ -1,17 +1,34 @@
 <title>{{ index .Args 0 }}</title>
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{ $path := .Req.URL.Path }}
+{{ if not (hasPrefix $path "/") }}
+    {{ $path = (printf "/%s" $path) }}
+{{ end }}
 
 <meta property="og:title" content="SCROTEGANG">
 <meta property="og:description" content="The worst therapists money can't buy">
-<meta property="og:url" content="https://{{ .Host }}{{ .Req.URL.Path }}">
-<meta property="og:image" content="https://{{ .Host }}/static/banner.png">
+<meta property="og:url" content="https://{{ .Host }}{{ $path }}">
+
+{{ if eq $path "/hsuhao.html" }}
+    <meta property="og:image" content="https://{{ .Host }}/static/image/hsuhao-banner.png">
+{{ else }}
+    <meta property="og:image" content="https://{{ .Host }}/static/image/banner.png">
+{{ end }}
+
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCROTEGANG">
 <meta name="twitter:description" content="The worst therapists money can't buy">
-<meta name="twitter:image" content="https://{{ .Host }}/static/banner.png">
+
+{{ if eq $path "/hsuhao.html" }}
+    <meta name="twitter:image" content="https://{{ .Host }}/static/image/hsuhao-banner.png">
+{{ else }}
+    <meta name="twitter:image" content="https://{{ .Host }}/static/image/banner.png">
+{{ end }}
+
 <meta name="twitter:site" content="@SCROTEGANG">
 <meta name="twitter:creator" content="@holedaemon">
 
