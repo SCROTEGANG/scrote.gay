@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    {{ include "include/head.html" "Uh oh!!!" }}
+
+    <link rel="stylesheet" href="/static/style/index.css">
+</head>
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-head"></div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-size-4-mobile is-size-1-tablet">You fucking broke something!!</h1>
+                {{ if eq (placeholder "http.error.status_text") "" }}
+                    <h2 class="subtitle is-size-5-mobile is-size-3-tablet">Who knows what it is though. Lol</h2>
+                {{ else }}
+                    <h2 class="subtitle is-size-5-mobile is-size-3-tablet">{{ placeholder "http.error.status_text" }}</h2>
+                {{ end }}
+
+                <ul class="mt-5">
+                    <li>
+                        <a class="is-family-monospace has-text-blurple" href="/">Go home, kid</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hero-foot"></div>
+    </section>
+</body>
