@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {{ $path := .Req.URL.Path }}
-{{ if not (hasPrefix $path "/") }}
+{{ if not (hasPrefix "/" $path) }}
     {{ $path = (printf "/%s" $path) }}
 {{ end }}
 
